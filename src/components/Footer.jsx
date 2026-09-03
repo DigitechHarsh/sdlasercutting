@@ -19,9 +19,11 @@ export const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-2">
             <a href="#home" className="flex items-center gap-2.5 mb-3">
-              <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-orange-600 text-white font-bold">
-                <Zap className="w-4 h-4 fill-white" />
-              </div>
+              <img
+                src="/images/sd-logo-white.png"
+                alt="SD Laser Cutting Logo"
+                className="h-9 w-auto object-contain shrink-0"
+              />
               <span className="text-xl font-black tracking-tight text-white font-['Outfit']">
                 SD LASER <span className="text-orange-500 font-bold">CUTTING</span>
               </span>

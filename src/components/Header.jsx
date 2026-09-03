@@ -54,14 +54,16 @@ export const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between gap-4">
           
-          {/* Brand Logo - Fixed single line */}
+          {/* Official Brand Logo - Fixed single line */}
           <a href="#home" className="flex items-center gap-2.5 shrink-0 group">
-            <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-orange-600 text-white shadow-xs font-bold shrink-0">
-              <Zap className="w-4 h-4 fill-white" />
-            </div>
+            <img
+              src="/images/sd-logo.png"
+              alt="SD Laser Cutting Surat Logo"
+              className="h-9 sm:h-10 w-auto object-contain shrink-0 group-hover:scale-105 transition-transform"
+            />
             <div className="shrink-0 flex flex-col justify-center">
               <div className="flex items-center gap-1.5 whitespace-nowrap leading-none">
-                <span className="text-lg sm:text-xl font-black tracking-tight text-slate-900 font-['Outfit']">
+                <span className="text-lg sm:text-xl font-black tracking-tight text-slate-950 font-['Outfit']">
                   SD LASER
                 </span>
                 <span className="text-lg sm:text-xl font-bold text-orange-600 tracking-tight font-['Outfit']">
