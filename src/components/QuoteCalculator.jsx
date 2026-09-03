@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
-import { Calculator, Send, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Calculator, CheckCircle2, ArrowRight } from 'lucide-react';
 import { WhatsAppIcon } from './WhatsAppIcon';
 
 export const QuoteCalculator = () => {
   const [formData, setFormData] = useState({
-    service: 'Metal Sheet Laser Cutting (MS / SS / Aluminium)',
+    material: 'Mild Steel (MS / Carbon Steel)',
+    thickness: '2mm - 4mm (Standard Plate)',
+    quantity: 'Small Batch (10-50 pcs)',
+    hasDesignFile: 'Yes (AutoCAD .dwg / .dxf ready)',
     fullName: '',
     mobileNumber: '',
     emailAddress: '',
-    description: ''
+    clientNote: ''
   });
   const [submitted, setSubmitted] = useState(false);
 
@@ -17,12 +20,16 @@ export const QuoteCalculator = () => {
     setSubmitted(true);
 
     const emailLine = formData.emailAddress.trim() ? `\n📧 *Email:* ${formData.emailAddress.trim()}` : '';
+    const nameLine = formData.fullName.trim() ? `\n👤 *Full Name:* ${formData.fullName.trim()}` : '';
+    const phoneLine = formData.mobileNumber.trim() ? `\n📞 *Mobile Number:* ${formData.mobileNumber.trim()}` : '';
+
     const message = `*Laser Cutting Quote Request - SD Laser Cutting Surat*
 ━━━━━━━━━━━━━━━━━━━━━
-🛠 *Service:* ${formData.service}
-👤 *Full Name:* ${formData.fullName}
-📞 *Mobile Number:* ${formData.mobileNumber}${emailLine}
-📝 *Description / Specs:* ${formData.description || 'Standard quotation required.'}
+🛠 *Material:* ${formData.material}
+📏 *Thickness (mm):* ${formData.thickness}
+📦 *Order Type / Qty:* ${formData.quantity}
+📐 *CAD / Drawing File:* ${formData.hasDesignFile}${nameLine}${phoneLine}${emailLine}
+📝 *Dimensions / Notes:* ${formData.clientNote || 'Standard quotation required.'}
 ━━━━━━━━━━━━━━━━━━━━━
 Please share the estimated rate, cutting turnaround time, and delivery schedule.`;
 
@@ -45,7 +52,7 @@ Please share the estimated rate, cutting turnaround time, and delivery schedule.
               Configure Your Cutting Job & Get Fast Estimate
             </h2>
             <p className="text-slate-600 text-xs sm:text-sm mt-1.5">
-              Fill in your details below to generate an instant pre-filled WhatsApp quote request directly to our Surat workshop.
+              Select your material, thickness (mm), and order details below to immediately launch a structured quotation request directly to our workshop on WhatsApp.
             </p>
           </div>
 
@@ -54,7 +61,7 @@ Please share the estimated rate, cutting turnaround time, and delivery schedule.
               <CheckCircle2 className="w-10 h-10 text-emerald-600 mx-auto mb-2" />
               <h3 className="text-base font-bold text-slate-900 mb-1">WhatsApp Message Ready!</h3>
               <p className="text-xs text-slate-600 mb-4">
-                WhatsApp has opened in a new tab with your pre-filled inquiry. You can send CAD drawing files (.dxf, .dwg, .pdf) directly in the chat.
+                WhatsApp has opened in a new tab with your pre-filled quote specifications. You can attach drawings (.dxf, .dwg, .pdf) directly in the chat.
               </p>
               <button
                 type="button"
@@ -67,32 +74,97 @@ Please share the estimated rate, cutting turnaround time, and delivery schedule.
           ) : (
             <form onSubmit={handleGenerateWhatsAppQuote} className="space-y-4">
               
-              {/* Service Dropdown */}
-              <div>
-                <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
-                  1. Select Service *
-                </label>
-                <select
-                  value={formData.service}
-                  onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                  className="w-full bg-slate-50 text-slate-900 rounded-xl px-3.5 py-2.5 border border-slate-300 focus:border-orange-600 focus:bg-white focus:ring-1 focus:ring-orange-600 outline-none text-xs sm:text-sm transition-colors cursor-pointer"
-                >
-                  <option value="Metal Sheet Laser Cutting (MS / SS / Aluminium)">Metal Sheet Laser Cutting (MS / SS / Aluminium)</option>
-                  <option value="Brass & Copper Laser Cutting">Brass & Copper Laser Cutting</option>
-                  <option value="Acrylic & Wood Laser Cutting">Acrylic & Wood Laser Cutting</option>
-                  <option value="Custom Decorative Jaali & Panels">Custom Decorative Jaali & Panels</option>
-                  <option value="CNC Laser Engraving & Marking">CNC Laser Engraving & Marking</option>
-                  <option value="Bulk / Industrial Order Cutting">Bulk / Industrial Order Cutting</option>
-                  <option value="Prototype & Small-Batch Cutting">Prototype & Small-Batch Cutting</option>
-                  <option value="Other / Custom Laser Cutting Requirement">Other / Custom Laser Cutting Requirement</option>
-                </select>
+              {/* Material & Thickness in mm */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                
+                {/* 1. Select Material */}
+                <div>
+                  <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
+                    1. Select Material *
+                  </label>
+                  <select
+                    value={formData.material}
+                    onChange={(e) => setFormData({ ...formData, material: e.target.value })}
+                    className="w-full bg-slate-50 text-slate-900 rounded-xl px-3.5 py-2.5 border border-slate-300 focus:border-orange-600 focus:bg-white focus:ring-1 focus:ring-orange-600 outline-none text-xs sm:text-sm transition-colors cursor-pointer"
+                  >
+                    <option value="Mild Steel (MS / Carbon Steel)">Mild Steel (MS / Carbon Steel)</option>
+                    <option value="Stainless Steel 304 (SS)">Stainless Steel 304 (SS)</option>
+                    <option value="Stainless Steel 316 (SS)">Stainless Steel 316 (Marine Grade)</option>
+                    <option value="Aluminium Sheet">Aluminium Sheet</option>
+                    <option value="Brass / Copper Sheet">Brass / Copper Sheet</option>
+                    <option value="Cast Acrylic (Clear/Color)">Cast Acrylic (Clear / Coloured)</option>
+                    <option value="MDF / Plywood / Wood">MDF / Plywood / Natural Wood</option>
+                    <option value="Decorative Metal Jaali Screen">Decorative Metal Jaali Screen</option>
+                    <option value="Other Custom Material">Other Custom Material</option>
+                  </select>
+                </div>
+
+                {/* 2. Approximate Thickness in mm */}
+                <div>
+                  <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
+                    2. Approximate Thickness (mm) *
+                  </label>
+                  <select
+                    value={formData.thickness}
+                    onChange={(e) => setFormData({ ...formData, thickness: e.target.value })}
+                    className="w-full bg-slate-50 text-slate-900 rounded-xl px-3.5 py-2.5 border border-slate-300 focus:border-orange-600 focus:bg-white focus:ring-1 focus:ring-orange-600 outline-none text-xs sm:text-sm transition-colors cursor-pointer"
+                  >
+                    <option value="0.8mm - 1.5mm (Thin Gauge)">0.8mm - 1.5mm (Thin Gauge)</option>
+                    <option value="2mm - 4mm (Standard Plate)">2mm - 4mm (Standard Plate)</option>
+                    <option value="5mm - 8mm (Medium Plate)">5mm - 8mm (Medium Plate)</option>
+                    <option value="10mm - 16mm (Heavy Plate)">10mm - 16mm (Heavy Plate)</option>
+                    <option value="18mm - 25mm (Max Heavy / Acrylic)">18mm - 25mm (Max Heavy / Acrylic)</option>
+                    <option value="Not sure / Need consultation">Not sure / Need consultation</option>
+                  </select>
+                </div>
+
               </div>
 
-              {/* Full Name & Mobile Number in 2 Columns */}
+              {/* Order Quantity & CAD Drawing */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                
+                {/* 3. Batch Size */}
+                <div>
+                  <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
+                    3. Batch Size / Order Volume *
+                  </label>
+                  <select
+                    value={formData.quantity}
+                    onChange={(e) => setFormData({ ...formData, quantity: e.target.value })}
+                    className="w-full bg-slate-50 text-slate-900 rounded-xl px-3.5 py-2.5 border border-slate-300 focus:border-orange-600 focus:bg-white focus:ring-1 focus:ring-orange-600 outline-none text-xs sm:text-sm transition-colors cursor-pointer"
+                  >
+                    <option value="Single Prototype (1-5 pcs)">Single Prototype / Sample (1-5 pcs)</option>
+                    <option value="Small Batch (10-50 pcs)">Small Batch (10-50 pcs)</option>
+                    <option value="Medium Production (50-200 pcs)">Medium Production (50-200 pcs)</option>
+                    <option value="High Volume Bulk (200+ pcs)">High Volume Bulk (200+ pcs)</option>
+                    <option value="Architectural / Residential Project">Architectural / Residential Project</option>
+                  </select>
+                </div>
+
+                {/* 4. CAD Drawing */}
+                <div>
+                  <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
+                    4. Design / CAD Drawing *
+                  </label>
+                  <select
+                    value={formData.hasDesignFile}
+                    onChange={(e) => setFormData({ ...formData, hasDesignFile: e.target.value })}
+                    className="w-full bg-slate-50 text-slate-900 rounded-xl px-3.5 py-2.5 border border-slate-300 focus:border-orange-600 focus:bg-white focus:ring-1 focus:ring-orange-600 outline-none text-xs sm:text-sm transition-colors cursor-pointer"
+                  >
+                    <option value="Yes (AutoCAD .dwg / .dxf ready)">Yes (AutoCAD .dwg / .dxf ready)</option>
+                    <option value="Yes (Vector PDF / AI / CDR)">Yes (Vector PDF / AI / CDR)</option>
+                    <option value="Have a rough sketch / photo">Have a rough sketch / photo</option>
+                    <option value="Need SD Laser team to design">Need SD Laser team to design</option>
+                  </select>
+                </div>
+
+              </div>
+
+              {/* Full Name & Mobile Number */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
-                    2. Full Name *
+                    5. Full Name *
                   </label>
                   <input
                     type="text"
@@ -106,7 +178,7 @@ Please share the estimated rate, cutting turnaround time, and delivery schedule.
 
                 <div>
                   <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
-                    3. Mobile Number *
+                    6. Mobile Number *
                   </label>
                   <input
                     type="tel"
@@ -122,7 +194,7 @@ Please share the estimated rate, cutting turnaround time, and delivery schedule.
               {/* Email Address (Optional) */}
               <div>
                 <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
-                  4. Email Address <span className="text-slate-400 font-normal normal-case">(Optional)</span>
+                  7. Email Address <span className="text-slate-400 font-normal normal-case">(Optional)</span>
                 </label>
                 <input
                   type="email"
@@ -133,17 +205,17 @@ Please share the estimated rate, cutting turnaround time, and delivery schedule.
                 />
               </div>
 
-              {/* Description */}
+              {/* Project Dimensions or Notes */}
               <div>
                 <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
-                  5. Description & Specs
+                  8. Project Dimensions or Notes (Optional)
                 </label>
                 <textarea
-                  rows="3"
-                  value={formData.description}
-                  onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-                  placeholder="E.g., Material thickness (e.g. 4mm MS), sheet dimensions, quantity, or CAD drawing availability..."
-                  className="w-full bg-slate-50 text-slate-900 rounded-xl px-3.5 py-2.5 border border-slate-300 focus:border-orange-600 focus:bg-white focus:ring-1 focus:ring-orange-600 outline-none text-xs sm:text-sm transition-colors placeholder:text-slate-400"
+                  rows="2"
+                  value={formData.clientNote}
+                  onChange={(e) => setFormData({ ...formData, clientNote: e.target.value })}
+                  placeholder="E.g., Sheet size 4x8 ft, need burr-free edge finish, delivery needed in Surat..."
+                  className="w-full bg-slate-50 text-slate-900 rounded-xl px-3.5 py-2 border border-slate-300 focus:border-orange-600 focus:bg-white focus:ring-1 focus:ring-orange-600 outline-none text-xs sm:text-sm transition-colors placeholder:text-slate-400"
                 ></textarea>
               </div>
 
