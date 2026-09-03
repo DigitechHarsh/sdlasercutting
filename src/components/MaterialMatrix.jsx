@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { materialsData } from '../data/materialsData';
-import { Layers, Shield, MessageCircle } from 'lucide-react';
+import { Layers, Shield } from 'lucide-react';
+import { WhatsAppIcon } from './WhatsAppIcon';
 
 export const MaterialMatrix = () => {
   const [selectedMaterial, setSelectedMaterial] = useState(materialsData[0]);
@@ -30,7 +31,7 @@ export const MaterialMatrix = () => {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-white border border-slate-300 hover:border-slate-400 text-slate-800 text-xs font-bold transition-colors shadow-2xs"
             >
-              <MessageCircle className="w-4 h-4 text-emerald-600" />
+              <WhatsAppIcon className="w-4 h-4 fill-emerald-600" />
               <span>Ask About Custom Materials</span>
             </a>
           </div>
@@ -112,7 +113,7 @@ export const MaterialMatrix = () => {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider transition-colors shadow-xs"
               >
-                <MessageCircle className="w-4 h-4 fill-white" />
+                <WhatsAppIcon className="w-4 h-4 fill-white" />
                 <span>Quote for {selectedMaterial.name.split(' (')[0]}</span>
               </a>
             </div>

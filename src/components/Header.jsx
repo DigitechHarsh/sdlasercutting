@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Phone, MessageCircle, Menu, X, Zap, ChevronRight } from 'lucide-react';
+import { Phone, Menu, X, Zap, ChevronRight } from 'lucide-react';
+import { WhatsAppIcon } from './WhatsAppIcon';
 
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -110,7 +111,7 @@ export const Header = () => {
               rel="noopener noreferrer"
               className="whitespace-nowrap flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs tracking-wide transition-colors shadow-xs shrink-0"
             >
-              <MessageCircle className="w-3.5 h-3.5 fill-white shrink-0" />
+              <WhatsAppIcon className="w-4 h-4 fill-white shrink-0" />
               <span>WhatsApp Quote</span>
             </a>
           </div>
@@ -166,7 +167,7 @@ export const Header = () => {
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 py-2.5 rounded-lg bg-emerald-600 text-white font-bold text-xs"
               >
-                <MessageCircle className="w-3.5 h-3.5 fill-white" />
+                <WhatsAppIcon className="w-3.5 h-3.5 fill-white" />
                 <span>WhatsApp</span>
               </a>
             </div>

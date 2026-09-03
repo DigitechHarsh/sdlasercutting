@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Phone, MessageCircle, MapPin, Clock, Send, Navigation, CheckCircle2, ExternalLink } from 'lucide-react';
+import { Phone, MapPin, Clock, Send, Navigation, CheckCircle2, ExternalLink } from 'lucide-react';
+import { WhatsAppIcon } from './WhatsAppIcon';
 
 export const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -73,7 +74,7 @@ Please share the estimated quotation, cutting turnaround time, and delivery sche
             className="flex items-center justify-center gap-3 p-4 rounded-xl bg-slate-50 border border-slate-200 hover:bg-slate-100 transition-colors text-slate-900 font-bold text-sm"
           >
             <div className="p-2 rounded-lg bg-emerald-100 text-emerald-600">
-              <MessageCircle className="w-5 h-5" />
+              <WhatsAppIcon className="w-5 h-5 fill-emerald-600" />
             </div>
             <div className="text-left">
               <p className="text-[10px] text-slate-500 uppercase font-mono">Instant WhatsApp</p>
@@ -212,7 +213,7 @@ Please share the estimated quotation, cutting turnaround time, and delivery sche
                     type="submit"
                     className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider transition-colors shadow-xs cursor-pointer"
                   >
-                    <MessageCircle className="w-4 h-4 fill-white" />
+                    <WhatsAppIcon className="w-4 h-4 fill-white" />
                     <span>Send WhatsApp Message (+91 84699 41403)</span>
                   </button>
                 </form>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Calculator, MessageCircle, Send, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Calculator, Send, CheckCircle2, ArrowRight } from 'lucide-react';
+import { WhatsAppIcon } from './WhatsAppIcon';
 
 export const QuoteCalculator = () => {
   const [formData, setFormData] = useState({
@@ -152,7 +153,7 @@ Please share the estimated rate, cutting turnaround time, and delivery schedule.
                   type="submit"
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm uppercase tracking-wider transition-colors shadow-sm cursor-pointer"
                 >
-                  <MessageCircle className="w-4 h-4 fill-white" />
+                  <WhatsAppIcon className="w-4 h-4 fill-white" />
                   <span>Send via WhatsApp (+91 84699 41403)</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>

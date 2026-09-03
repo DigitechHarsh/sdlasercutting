@@ -1,5 +1,6 @@
 import React from 'react';
-import { Zap, Phone, MessageCircle, MapPin, ArrowUp, Star } from 'lucide-react';
+import { Zap, Phone, MapPin, ArrowUp, Star } from 'lucide-react';
+import { WhatsAppIcon } from './WhatsAppIcon';
 
 export const Footer = () => {
   const scrollToTop = () => {
@@ -79,7 +80,7 @@ export const Footer = () => {
                 <span>+91 84699 41403</span>
               </a>
               <a href="https://wa.me/918469941403" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-white transition-colors">
-                <MessageCircle className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                <WhatsAppIcon className="w-3.5 h-3.5 fill-emerald-400 shrink-0" />
                 <span>WhatsApp: +91 84699 41403</span>
               </a>
               <a href={googleMapsUrl} target="_blank" rel="noopener noreferrer" className="flex items-start gap-2 hover:text-white transition-colors">

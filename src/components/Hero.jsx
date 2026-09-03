@@ -1,5 +1,6 @@
 import React from 'react';
-import { MessageCircle, Phone, MapPin, CheckCircle2, Clock, ShieldCheck, ArrowRight } from 'lucide-react';
+import { Phone, MapPin, CheckCircle2, Clock, ShieldCheck, ArrowRight } from 'lucide-react';
+import { WhatsAppIcon } from './WhatsAppIcon';
 
 export const Hero = () => {
   const whatsappUrl = "https://wa.me/918469941403?text=" + encodeURIComponent("Hi SD Laser Cutting, I am looking for a quick quote for laser cutting in Surat. Here are my project details:");
@@ -40,7 +41,7 @@ export const Hero = () => {
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm tracking-wide transition-colors shadow-sm cursor-pointer"
               >
-                <MessageCircle className="w-4 h-4 fill-white" />
+                <WhatsAppIcon className="w-4 h-4 fill-white" />
                 <span>Get a Free Quote (WhatsApp)</span>
               </a>
 

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Phone, MessageCircle, Navigation } from 'lucide-react';
+import { Phone, Navigation } from 'lucide-react';
+import { WhatsAppIcon } from './WhatsAppIcon';
 
 export const MobileActionBar = () => {
   const googleMapsUrl = "https://www.google.com/maps/place/Sd+laser+cutting/@21.2062093,72.9139625,651m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3be045209a556d29:0x4a31b9dbce77b29e!8m2!3d21.2062093!4d72.9139625!16s%2Fg%2F11zkp5w8b4";
@@ -25,7 +26,7 @@ export const MobileActionBar = () => {
           rel="noopener noreferrer"
           className="flex flex-col items-center justify-center py-2 px-1 rounded-xl bg-emerald-600 text-white font-bold shadow-xs active:bg-emerald-700"
         >
-          <MessageCircle className="w-4 h-4 fill-white mb-0.5" />
+          <WhatsAppIcon className="w-4 h-4 fill-white mb-0.5" />
           <span className="text-[10px] font-bold">WhatsApp</span>
         </a>
 

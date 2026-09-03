@@ -1,6 +1,7 @@
 import React from 'react';
 import { servicesData } from '../data/servicesData';
-import { Layers, Flame, Grid, Sparkles, Factory, Cpu, MessageCircle, ArrowRight, Check } from 'lucide-react';
+import { Layers, Flame, Grid, Sparkles, Factory, Cpu, ArrowRight, Check } from 'lucide-react';
+import { WhatsAppIcon } from './WhatsAppIcon';
 
 const iconMap = {
   Layers: Layers,
@@ -109,7 +110,7 @@ export const Services = () => {
                     rel="noopener noreferrer"
                     className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-slate-100 hover:bg-emerald-600 hover:text-white text-slate-800 font-bold text-xs transition-colors border border-slate-200 hover:border-emerald-600"
                   >
-                    <MessageCircle className="w-3.5 h-3.5" />
+                    <WhatsAppIcon className="w-3.5 h-3.5" />
                     <span>Inquire on WhatsApp</span>
                     <ArrowRight className="w-3.5 h-3.5 ml-auto" />
                   </a>

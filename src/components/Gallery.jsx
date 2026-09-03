@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { galleryCategories, galleryItems } from '../data/galleryData';
-import { Eye, X, MessageCircle } from 'lucide-react';
+import { Eye, X } from 'lucide-react';
+import { WhatsAppIcon } from './WhatsAppIcon';
 
 /**
  * DEVELOPER / OWNER NOTE:
@@ -143,7 +144,7 @@ export const Gallery = () => {
                   rel="noopener noreferrer"
                   className="flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider transition-colors shadow-xs"
                 >
-                  <MessageCircle className="w-4 h-4 fill-white" />
+                  <WhatsAppIcon className="w-4 h-4 fill-white" />
                   <span>Inquire for Similar Design</span>
                 </a>
 
