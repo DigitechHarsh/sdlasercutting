@@ -86,8 +86,11 @@ export const Footer = () => {
                 <MapPin className="w-3.5 h-3.5 text-blue-400 shrink-0 mt-0.5" />
                 <span>Surat, Gujarat, India (21.2062093, 72.9139625)</span>
               </a>
-              <p className="text-[11px] text-slate-500 pt-1">
-                Mon - Sat: 9:30 AM - 8:00 PM
+              <p className="text-[11px] text-slate-400 pt-1">
+                Mon - Sat: 9:00 AM - 8:00 PM
+              </p>
+              <p className="text-[11px] text-slate-500">
+                Sunday: Closed
               </p>
             </div>
           </div>

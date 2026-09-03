@@ -273,10 +273,10 @@ Please share the estimated quotation, cutting turnaround time, and delivery sche
                 <div>
                   <h4 className="text-xs font-bold text-slate-900 uppercase">Business Hours</h4>
                   <p className="text-xs text-slate-600 mt-0.5">
-                    <strong>Monday – Saturday:</strong> 9:30 AM – 8:00 PM
+                    <strong>Monday – Saturday:</strong> 9:00 AM – 8:00 PM
                   </p>
                   <p className="text-xs text-slate-500">
-                    <strong>Sunday:</strong> Closed / By Appointment
+                    <strong>Sunday:</strong> Closed
                   </p>
                 </div>
               </div>
