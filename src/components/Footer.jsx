@@ -18,13 +18,13 @@ export const Footer = () => {
           
           {/* Brand */}
           <div className="lg:col-span-2">
-            <a href="#home" className="flex items-center gap-2.5 mb-3">
+            <a href="#home" className="flex items-center gap-3 mb-3">
               <img
                 src="/images/sd-logo-white.png"
                 alt="SD Laser Cutting Logo"
-                className="h-9 w-auto object-contain shrink-0"
+                className="h-12 sm:h-14 w-auto object-contain shrink-0"
               />
-              <span className="text-xl font-black tracking-tight text-white font-['Outfit']">
+              <span className="text-xl sm:text-2xl font-black tracking-tight text-white font-['Outfit']">
                 SD LASER <span className="text-orange-500 font-bold">CUTTING</span>
               </span>
             </a>

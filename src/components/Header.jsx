@@ -55,22 +55,22 @@ export const Header = () => {
         <div className="flex items-center justify-between gap-4">
           
           {/* Official Brand Logo - Fixed single line */}
-          <a href="#home" className="flex items-center gap-2.5 shrink-0 group">
+          <a href="#home" className="flex items-center gap-3 shrink-0 group">
             <img
               src="/images/sd-logo.png"
               alt="SD Laser Cutting Surat Logo"
-              className="h-9 sm:h-10 w-auto object-contain shrink-0 group-hover:scale-105 transition-transform"
+              className="h-11 sm:h-12 w-auto object-contain shrink-0 group-hover:scale-105 transition-transform"
             />
             <div className="shrink-0 flex flex-col justify-center">
               <div className="flex items-center gap-1.5 whitespace-nowrap leading-none">
-                <span className="text-lg sm:text-xl font-black tracking-tight text-slate-950 font-['Outfit']">
+                <span className="text-xl sm:text-2xl font-black tracking-tight text-slate-950 font-['Outfit']">
                   SD LASER
                 </span>
-                <span className="text-lg sm:text-xl font-bold text-orange-600 tracking-tight font-['Outfit']">
+                <span className="text-xl sm:text-2xl font-bold text-orange-600 tracking-tight font-['Outfit']">
                   CUTTING
                 </span>
               </div>
-              <p className="text-[10px] tracking-wide font-mono text-slate-500 mt-1 whitespace-nowrap hidden sm:block">
+              <p className="text-[11px] tracking-wide font-mono text-slate-500 mt-1 whitespace-nowrap hidden sm:block">
                 Surat, Gujarat • 5.0 ★ Rated
               </p>
             </div>
